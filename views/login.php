@@ -26,10 +26,10 @@
 <div class="flex justify-center items-center h-screen p-10 ">
   <div class="grid md:grid-cols-2 grid-cols-1  border rounded-3xl">
     <div class="flex justify-center items-center p-5">
-      <form action="">
+      <form action="" id="validation" >
         <h1 class="text-center mb-10 font-bold text-4xl">Login</h1>
-        <input type="email" class=" bg-gray-100 border outline-none rounded-md py-3 w-full px-4 mb-3" placeholder="Email">
-        <input type="password" class=" bg-gray-100 border outline-none rounded-md py-3 w-full px-4 mb-3" placeholder="Password">
+        <input id="email" type="email" class=" bg-gray-100 border outline-none rounded-md py-3 w-full px-4 mb-3" placeholder="Email">
+        <input id="password" type="password" class=" bg-gray-100 border outline-none rounded-md py-3 w-full px-4 mb-3" placeholder="Password">
         <button type="submit" class=" bg-yellow-400 hover:bg-yellow-500 border outline-none rounded-md py-3 w-full px-4 font-semibold text-white">submit</button>
       </form>
     </div>
@@ -39,5 +39,39 @@
   </div>
 </div>
     
+
+
+<script>
+
+const namePattern = /^[a-zA-Z\s]+$/;
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/; 
+        const passwordPattern = /^(?=.*[a-zA-Z0-9]).{4,}$/;
+
+
+        document.getElementById('validation').addEventListener('submit', function(event) {
+              
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+              
+
+                if (!emailPattern.test(email)) {
+                    alert("please enter a valid email address.");
+                    event.preventDefault();
+                    return;
+                } 
+
+                if (!passwordPattern.test(password)) {
+                    alert("password must be at least 4 characters long");
+                    event.preventDefault();
+                    return;
+                }
+
+        });
+
+
+
+
+</script>
 </body>
 </html>

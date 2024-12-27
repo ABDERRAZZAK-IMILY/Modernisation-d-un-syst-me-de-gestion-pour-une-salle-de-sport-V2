@@ -33,6 +33,8 @@
                                 <div class="sb-nav-link-icon"><i class="fa fa-sign-out" aria-hidden="true"></i>                                </div>
                                 LOGOUT
                             </a>
+                            <a href="#" id="editButton" class="mb-20 rounded-md bg-blue-600 hover:bg-blue-700 text-white uppercase mx-auto px-6 py-2 my-4">ADD ACTIVITY</a>
+
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
@@ -49,8 +51,8 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                        
-                       
-                        <div class="card mb-4">
+
+                        <div class="card mb-4 mt-10">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 members resivations :
@@ -70,9 +72,35 @@
            
     </table>
 </div>
-                        </div>
+                  </div>
                     </div>
                 </main>
+   
+
+                <div class="bg-gray-800 p-4 rounded bg-opacity-50 absolute" id="editForm" style="display:none">
+        <h1 class="text-3xl font-bold text-center mb-8 text-white">ADD ACTIVITY</h1>
+
+          <form id="player-form" class="space-y-4">
+            <div>
+              <label class="block mb-2 text-white">Name</label>
+              <input type="text" id="name"  name="activity_name" class="w-full p-2  rounded">
+            </div>
+            <div>
+              <label class="block mb-2 text-white">description</label>
+              <input type="text" id="description" name="description" required class="w-full p-2  rounded">
+            </div>
+            <div>
+              <label class="block mb-2 text-white">PRICE</label>
+              <input type="numbre" id="price" name="price" required class="w-full p-2  rounded">
+            </div>
+            <button type="submit" name="update" class="rounded-md bg-green-600 hover:bg-green-700 text-white uppercase mx-auto px-6 py-2 my-4">add</button>
+          </form>
+            </div>   
+
+
+
+
+
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
@@ -98,7 +126,19 @@ if (sidebarToggle) {
 }
 
 });
+
+
         </script>
+                <script>
+    document.getElementById('editButton').onclick = function() {
+        var editForm = document.getElementById('editForm');
+        if (editForm.style.display === "none") {
+            editForm.style.display = "block";
+        } else {
+            editForm.style.display = "none";
+        }
+    };
+</script> 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="assets/demo/chart-area-demo.js"></script>

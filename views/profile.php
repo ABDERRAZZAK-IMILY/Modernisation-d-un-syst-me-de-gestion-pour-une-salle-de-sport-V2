@@ -26,6 +26,39 @@
 
         </div>
 
+
+
+
+
+
+
+
+
+        <div class="bg-gray-800 p-4 rounded bg-opacity-50 absolute top-0 left-0 w-50 z-10" id="editForm" style="display: none;">
+        <h1 class="text-3xl font-bold text-center mb-8 text-white">EDIT PROFILE</h1>
+
+          <form id="player-form" class="space-y-4">
+            <div>
+              <label class="block mb-2 text-white">Name</label>
+              <input type="text" id="name"  name="firstname" class="w-full p-2  rounded">
+            </div>
+            <div>
+              <label class="block mb-2 text-white">prneme</label>
+              <input type="text" id="lastname" name="lastname" required class="w-full p-2  rounded">
+            </div>
+            <div>
+              <label class="block mb-2 text-white">email</label>
+              <input type="email" id="email" name="email" required class="w-full p-2  rounded">
+            </div>
+            <div>
+              <label class="block mb-2 text-white">Image</label>
+              <input type="file" name="image" id="image-src" accept=".png" class="w-full  rounded-md text-white outline-none focus:ring-2 focus:ring-blue-100">
+            </div>
+            <button type="submit" name="update" class="rounded-md bg-green-600 hover:bg-green-700 text-white uppercase mx-auto px-6 py-2 my-4">Update Profile</button>
+          </form>
+            </div>   
+        <a href="#" id="editButton" class="mb-20 rounded-md bg-blue-600 hover:bg-blue-700 text-white uppercase mx-auto px-6 py-2 my-4">Edit Profile</a>
+
         <div
             class="xl:w-[80%] lg:w-[90%] md:w-[90%] sm:w-[92%] xs:w-[90%] mx-auto flex flex-col gap-4 items-center relative lg:-top-8 md:-top-6 sm:-top-4 xs:-top-4">
             <!-- Description -->
@@ -53,10 +86,6 @@
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Date Of Birth</dt>
                                 <dd class="text-lg font-semibold">21/02/1997</dd>
                             </div>
-                            <div class="flex flex-col py-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Gender</dt>
-                                <dd class="text-lg font-semibold">Male</dd>
-                            </div>
                         </dl>
                     </div>
                     <div class="w-full">
@@ -65,24 +94,24 @@
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Location</dt>
                                 <dd class="text-lg font-semibold">Ethiopia, Addis Ababa</dd>
                             </div>
-
-                            <div class="flex flex-col pt-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Phone Number</dt>
-                                <dd class="text-lg font-semibold">+251913****30</dd>
-                            </div>
                             <div class="flex flex-col pt-3">
                                 <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Email</dt>
                                 <dd class="text-lg font-semibold">samuelabera87@gmail.com</dd>
-                            </div>
-
-                            <div class="flex flex-col pt-3">
-                                <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">Website</dt>
-                                <dd class="text-lg font-semibold hover:text-blue-500"><a href="https://techakim.com">https://www.teclick.com</a></dd>
                             </div>
                         </dl>
                     </div>
                 </div>
                 
                
+                <script>
+    document.getElementById('editButton').onclick = function() {
+        var editForm = document.getElementById('editForm');
+        if (editForm.style.display === "none") {
+            editForm.style.display = "block";
+        } else {
+            editForm.style.display = "none";
+        }
+    };
+</script>         
 </body>
 </html>
